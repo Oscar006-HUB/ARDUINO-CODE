@@ -1,41 +1,12 @@
-# Prerequisites
-*.d
+const int potentiometerPin = 4; // ESP32 analog pin
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+void setup() {
+  Serial.begin(115200);
+}
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
-
-# debug information files
-*.dwo
+void loop() {
+  int sensorValue = analogRead(potentiometerPin);
+  Serial.print("Potentiometer Value: ");
+  Serial.println(sensorValue);
+  delay(50);
+}
